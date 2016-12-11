@@ -18,7 +18,8 @@ Agile approach allows more rapid development with shorter development cycles.
 6. At a basic level, what does cURL allow you to do?  
 Allows us to evaluate HTTP calls through the command line.
 7. In a database that's holding students and teachers, what will be the relationship between students and teachers? Draw the schema diagram.  
-![Schema diagram screenshot][https://cloud.githubusercontent.com/assets/18202283/21083270/f31bc462-bfa9-11e6-8716-4e8e11b26a1a.png]
+A `teacher` could belong to multiple `student` and also any given `student` could belong to multiple `teacher`. So this would be a many-to-many relationship between the two tables
+<img width="512" alt="screen shot 2016-12-11 at 2 06 29 pm" src="https://cloud.githubusercontent.com/assets/18202283/21083326/4662950a-bfab-11e6-96d1-9bf9bcc487e2.png">
 8. Define foreign key, primary key, and schema.  
 __Foreign key:__ the column of the table that is used to associate it with the `Primary key` in the other table  
 __Primary key:__ the column of the table that is used to associate it with the `Foreign key` in the other table. `Primary key` must be a unique identified of row within that table.  
