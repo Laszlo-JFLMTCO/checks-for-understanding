@@ -21,9 +21,14 @@ We say "HTTP is stateless" as HTTP itself does not maintain any tracking of the 
 Authentication is the process to confirm who the user is and that the user can have access to the web application.
 * What’s the difference between authentication and authorization?  
 Authorization is different from authentication in a way that while authentication confirms who the user is, authorization determines what features of the web application the user is allowed to use.
-* What’s a before filter?
-* How do we keep track of a user once they’ve logged in?
-* When do you want to namespace a resource? When do you want to nest a resource? What's the differences between those two approaches?
-* At a high level, what tools can you use to implement authorization? How would you use them?
-* What's an enum, and what advantages does it offer? What data type needs to be in your database to use an enum? Where do you declare an enum?
+* What’s a before filter?  
+The before filter allows us to run specific methods 'before' any or a list of specific routes are evaluated. Before filter details are inherited through the controllers depending on which controller has it defined.
+* How do we keep track of a user once they’ve logged in?  
+The user activities can be tracked through session, such as user ID as well as cart details.
+* When do you want to namespace a resource? When do you want to nest a resource? What's the differences between those two approaches?  
+Namespacing a resource is used when we want certain routes to be limited to specifically authorized users. Example: site admin to review list of users, make changes to user details, etc. Nested resource is used when there is an actual logical connection between the resource related details, such as database associations. Example is: reviews of products.
+* At a high level, what tools can you use to implement authorization? How would you use them?  
+Use a gem called `Bcrypt` to manage (encrypt and evaluate) passwords for site users
+* What's an enum, and what advantages does it offer? What data type needs to be in your database to use an enum? Where do you declare an enum?  
+Enum is a built-in Rails feature that allows us to assign an enumerable to specific column(s). The column would need to have `integer` data type, and we would assign a corresponding `Array` of values. Example is if our `user` table has a `site_role` column, where numbers `0, 1, 2` would represent values associated with roles within our site and the defined enum would have `[admin, editor, user]` values. In this case value `0` in the `site_role` column could be called for `user.admin?` to evaluate its value or similarly a `user.site_role` would return `admin` as a value.
 * What are some strategies you can use to keep your views DRY?
