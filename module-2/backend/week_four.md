@@ -31,4 +31,5 @@ Namespacing a resource is used when we want certain routes to be limited to spec
 Use a gem called `Bcrypt` to manage (encrypt and evaluate) passwords for site users
 * What's an enum, and what advantages does it offer? What data type needs to be in your database to use an enum? Where do you declare an enum?  
 Enum is a built-in Rails feature that allows us to assign an enumerable to specific column(s). The column would need to have `integer` data type, and we would assign a corresponding `Array` of values. Example is if our `user` table has a `site_role` column, where numbers `0, 1, 2` would represent values associated with roles within our site and the defined enum would have `[admin, editor, user]` values. In this case value `0` in the `site_role` column could be called for `user.admin?` to evaluate its value or similarly a `user.site_role` would return `admin` as a value.
-* What are some strategies you can use to keep your views DRY?
+* What are some strategies you can use to keep your views DRY?  
+Some strategies include removing logic from the views, add helper class to pass values to the views, take advantage of partials to re-use repeating details from our views.
